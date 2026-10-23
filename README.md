@@ -40,11 +40,11 @@ soundtrack, so cutscenes play silently.
 
 | Key | PlayStation button |
 | --- | --- |
-| Arrow keys | D-pad |
+| W A S D (or arrow keys) | D-pad |
 | Enter / X | ✕ (confirm) |
 | Delete / Z | ○ (cancel) |
 | Escape / Q | △ |
-| A | □ |
+| E | □ |
 | Space | Start |
 | Tab | Select |
 | F (hold) | Fast-forward the current scene and skip dialogue |
