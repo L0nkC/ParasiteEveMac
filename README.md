@@ -5,6 +5,10 @@ Silicon Macs. It is not an emulator: the game's own code runs natively on
 your Mac, with the PlayStation hardware (graphics, sound, CD drive, memory
 cards and controller) recreated for macOS.
 
+![The dressing room: original PlayStation resolution on the left, HD on the right](images/compare.jpg)
+*Left: the original 320×240 picture. Right: this version at 4× internal
+resolution with HD backgrounds.*
+
 > **You need your own copy of the game.** This download contains no game
 > data. You install it from your own disc images of the North American
 > release (SLUS-00662 / SLUS-00668).
@@ -55,7 +59,30 @@ Game controllers are not supported yet.
 
 Press **F1** (or **⌘,**) in the game for the settings menu: output
 resolution up to 4K, internal rendering resolution up to 10×, aspect ratio,
-sharp or smooth filtering, and fullscreen (**⌃⌘F**).
+sharp or smooth filtering, HD backgrounds, and fullscreen (**⌃⌘F**).
+
+At a higher internal resolution the 3D characters are drawn smoothly: no
+PlayStation vertex wobble, no texture warping, and no flickering seams
+between body parts.
+
+## HD backgrounds
+
+The pre-rendered room backgrounds can be shown in HD, upscaled 4× by an AI
+upscaler ([Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN), included
+in the app). The approach is the same as the
+[Parasite Eve HD Remaster](https://github.com/faligame/Parasite-Eve-HD-Remaster)
+project: each camera view is rebuilt as one picture, upscaled as a whole,
+and drawn back exactly where the original tiles were.
+
+![Detail: original on the left, HD on the right](images/detail.jpg)
+
+It is on by default and needs nothing from you. The first time you enter a
+room, the game upscales its background in the background (a few seconds,
+on the GPU) and switches to HD as soon as it is done; after that the room
+is HD right away. It takes effect at an internal resolution of 2× or more
+and can be turned off in the F1 menu. The HD images are made from your own
+copy of the game and stay on your Mac
+(`~/Library/Application Support/ParasiteEveMac/hd`).
 
 ## Saves
 
@@ -77,6 +104,7 @@ copy saves between them and this version.
 | Installed disc files | `~/Library/Application Support/ParasiteEveMac/disc/` |
 | Memory cards | `~/Library/Application Support/ParasiteEveMac/memcards/` |
 | Settings | `~/Library/Application Support/ParasiteEveMac/settings.ini` |
+| HD backgrounds | `~/Library/Application Support/ParasiteEveMac/hd/` |
 | Game log | `~/Library/Logs/ParasiteEveMac/pe1mac.log` (previous run: `pe1mac.prev.log`) |
 
 To uninstall, delete the app and the `ParasiteEveMac` folder in
@@ -95,4 +123,8 @@ include `pe1mac.log` when you report a problem.
 
 Parasite Eve © Square Enix. This is an unofficial fan project, not
 affiliated with or endorsed by Square Enix. No game data is included or
-distributed; you must own the game.
+distributed; you must own the game. Screenshots are shown for comparison
+only.
+
+The app includes Real-ESRGAN (BSD 3-Clause) and realesrgan-ncnn-vulkan
+(MIT) by Xintao Wang; their licenses are in the app bundle.
