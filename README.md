@@ -9,6 +9,11 @@ cards and controller) recreated for macOS.
 *Left: the original 320×240 picture. Right: this version at 4× internal
 resolution with HD backgrounds.*
 
+Built on the [Parasite Eve decompilation](https://github.com/khasinski/parasite-eve-decomp)
+by Chris Hasiński and contributors, used with permission. That project
+turned the original game code back into C; this port compiles it for the
+Mac.
+
 > **You need your own copy of the game.** This download contains no game
 > data. You install it from your own disc images of the North American
 > release (SLUS-00662 / SLUS-00668).
@@ -23,9 +28,11 @@ newer.
 ## Install
 
 1. Open `ParasiteEve.dmg` and drag **Parasite Eve** into **Applications**.
-2. Open the app. Because it isn't notarized by Apple, the first time you
-   have to right-click the app → **Open** (or go to *System Settings →
-   Privacy & Security → Open Anyway*).
+2. Open the app. It isn't notarized by Apple, so the first time macOS
+   says it can't check the app and offers only *Done*. Click **Done**, go to
+   *System Settings → Privacy & Security*, scroll down and click **Open
+   Anyway** next to "Parasite Eve", then confirm. You only have to do this
+   once.
 3. Drop your disc images onto the window: **Disc 1** is required, and
    **Disc 2** can be added now or later. A `.cue` file with its `.bin`, a
    single `.bin`, or an `.iso` all work. You can also click a disc row to
@@ -119,6 +126,16 @@ parts of the story have not been played through yet, so expect bugs there.
 If the game crashes, the launcher reopens and points you to the log. Please
 include `pe1mac.log` when you report a problem.
 
+## Credits
+
+- [parasite-eve-decomp](https://github.com/khasinski/parasite-eve-decomp)
+  by Chris Hasiński and contributors: the decompiled game code this port is
+  built on, used with permission.
+- [Parasite Eve HD Remaster](https://github.com/faligame/Parasite-Eve-HD-Remaster)
+  by faligame: the approach for the HD backgrounds.
+- [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) by Xintao Wang: the
+  AI upscaler.
+
 ## Legal
 
 Parasite Eve © Square Enix. This is an unofficial fan project, not
@@ -127,4 +144,6 @@ distributed; you must own the game. Screenshots are shown for comparison
 only.
 
 The app includes Real-ESRGAN (BSD 3-Clause) and realesrgan-ncnn-vulkan
-(MIT) by Xintao Wang; their licenses are in the app bundle.
+(MIT) by Xintao Wang, with ncnn (BSD 3-Clause), glslang, MoltenVK
+(Apache 2.0) and libwebp (BSD 3-Clause). Their licenses are in the app
+bundle under `Contents/Resources/Third-party licenses.txt`.
